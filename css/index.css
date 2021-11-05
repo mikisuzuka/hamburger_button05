@@ -1,0 +1,130 @@
+body {
+  color: #555;
+}
+
+header {
+  height: 80px;
+  line-height: 80px;
+  background-color: #c3ccff;
+}
+
+header .logo h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+}
+
+header .menu-button {
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 50%;
+  border: solid rgba(255, 255, 255, 0) 1px;
+}
+
+header .menu-button span {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header .menu-button span:first-child {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+}
+
+header .menu-button span:last-child {
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+}
+
+header .menu-button.activ {
+  border: solid #fff 1px;
+}
+
+header .menu-button.activ span:first-child {
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  background-color: #fff;
+}
+
+header .menu-button.activ span:nth-child(2) {
+  opacity: 0;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+header .menu-button.activ span:last-child {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  background-color: #fff;
+}
+
+header .overlay {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #c3ccff;
+  -webkit-transform: translateY(-330px);
+          transform: translateY(-330px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+header .overlay ul {
+  text-align: center;
+}
+
+header .overlay.show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+header .pc-menu {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: none;
+}
+
+header .pc-menu ul {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-left: auto;
+}
+
+header .pc-menu ul li {
+  list-style: none;
+  text-align: center;
+  width: 100px;
+}
+
+@media screen and (min-width: 576px) {
+  .pc-menu {
+    display: block !important;
+  }
+  .overlay {
+    display: none;
+  }
+  .menu-button {
+    display: none;
+  }
+}
